@@ -1,0 +1,652 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SAP_AddSTlocation" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1026,6246" sap2010:WorkflowViewState.IdRef="SAP_AddSTlocation_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ucas="clr-namespace:UiPath.Core.Activities.SAP;assembly=UiPath.UiAutomation.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CF47A4A0F5F_send_message_to_user_v2_Create.Bundle;assembly=CF47A4A0F5F_send_mes.FXEv54h54PJ1bJefA1Twen3" xmlns:uiascb1="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CF47A4A0F5F_send_message_to_channel_v2_Create.Bundle;assembly=CF47A4A0F5F_send_mes.EtRHB2PAUJE1su0cd3cBRSp" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.Core.Activities.SAP</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SAP_AddSTlocation" sap:VirtualizedContainerService.HintSize="880,6181" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="in_Tcode">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">mmsc</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="in_STloc">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">DG01</Literal>
+        </Variable.Default>
+      </Variable>
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ucas:CallTransaction DisplayName="Call Transaction - Enter SAP Tcode" sap:VirtualizedContainerService.HintSize="818,192" sap2010:WorkflowViewState.IdRef="CallTransaction_1" Transaction="[in_Tcode]">
+      <ucas:CallTransaction.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7d4a0943-25a9-417d-890c-c03ba297584c" InformativeScreenshot="60b3285b18eb8d51ba1e4a24ab8c6cff" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP*' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ucas:CallTransaction.Target>
+    </ucas:CallTransaction>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application - SAP" sap:VirtualizedContainerService.HintSize="818,5901" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="73358515-1845-415a-8118-984b2cddbc36" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="784,5587" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="in_MaterialName">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:String">12000497</Literal>
+                </Variable.Default>
+              </Variable>
+              <Variable x:TypeArguments="x:String" Name="in_Plant">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:String">1001</Literal>
+                </Variable.Default>
+              </Variable>
+              <Variable x:TypeArguments="x:String" Name="Avl_Loc" />
+              <Variable x:TypeArguments="x:Int32" Name="row">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:Int32" />
+                </Variable.Default>
+              </Variable>
+              <Variable x:TypeArguments="x:Boolean" Name="ST_Flag">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:Boolean" Value="True" />
+                </Variable.Default>
+              </Variable>
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - Material Name" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="722,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="73358515-1845-415a-8118-984b2cddbc36" Text="[in_MaterialName]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="102, 203, 286, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/ctxtRM03M-MATNR' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtRM03M-MATNR' /&gt;" Guid="c761a218-fc84-4c0d-85d7-ce6f67771e0d" ImageBase64="" InformativeScreenshot="bba8ebdf4d4dc3c5bb52e2a1f368107d.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Storage Locations Collectively: Initial Screen' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="25, 203, 76, 20" ElementType="Text" FullSelectorArgument="&lt;sap id='usr/lblRM03M-MATNR' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/lblRM03M-MATNR' check:text='Material..' /&gt;" Guid="835bb00e-3167-4639-8aba-6df2c4103f5e" SearchSteps="Selector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'List all'" sap:VirtualizedContainerService.HintSize="722,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="73358515-1845-415a-8118-984b2cddbc36" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="32, 291, 300, 20" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;sap id='usr/radRM03M-LFLAG' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/radRM03M-LFLAG' check:text='List all existing storage locations' /&gt;" Guid="db22bfec-25ae-4371-a5a4-854cc49f49b1" InformativeScreenshot="3f21a6cf252ec3d3e5cca53146a43919.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Storage Locations Collectively: Initial Screen' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Plant.....'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="722,250" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="73358515-1845-415a-8118-984b2cddbc36" Text="[in_Plant + &quot;[k(Enter)]&quot;]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="102, 225, 34, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/ctxtRM03M-WERKS' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtRM03M-WERKS' /&gt;" Guid="da1264b7-8450-46e1-899e-e7095eaa6171" ImageBase64="" InformativeScreenshot="007bbf6c1d311b8a48d850f96fef8dd0.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Storage Locations*' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="25, 225, 76, 20" ElementType="Text" FullSelectorArgument="&lt;sap id='usr/lblRM03M-WERKS' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/lblRM03M-WERKS' check:text='Plant.....' /&gt;" Guid="dc84e679-5be6-4c1e-9122-c2a0f02b4658" SearchSteps="Selector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <Delay DisplayName="Delay - 1 sec" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="722,122" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <uix:NGetText DisplayName="Get Text 'SimpleContainer :SAPMM0…'" sap:VirtualizedContainerService.HintSize="722,189" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="73358515-1845-415a-8118-984b2cddbc36" TextString="[Avl_Loc]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="32, 291, 188, 219" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;sap id='usr/sub:SAPMM03M:0195' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/sub:SAPMM03M:0195' /&gt;" Guid="95f6c943-3c12-4680-850b-e0fa8f030876" InformativeScreenshot="791d564f29a3e215a5cb24e41c543fe6.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Storage Locations Collectively: List' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="722,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[Avl_Loc]" />
+            <If Condition="[Avl_Loc.Trim().ToLower().Contains(in_STloc.Trim().ToLower())]" sap:VirtualizedContainerService.HintSize="722,4289" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,648" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Back (F3)'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="73358515-1845-415a-8118-984b2cddbc36" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CVScreenId="bbe8a758-09f0-434a-98a4-2607d052ccab" CvElementArea="264, 50, 22, 21" CvTextArea="270, 57, 12, 11" CvType="Icon" DesignTimeRectangle="264, 50, 22, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='tbar[0]/btn[3]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[3]' /&gt;" Guid="0f83416c-67ed-4073-8634-ba067b90d0c9" InformativeScreenshot="6b4ff3c7840aad53c703443dd9811f00.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Storage Locations Collectively: List' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Back (F3)'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="73358515-1845-415a-8118-984b2cddbc36" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CVScreenId="bbe8a758-09f0-434a-98a4-2607d052ccab" CvElementArea="264, 50, 22, 21" CvTextArea="270, 57, 12, 11" CvType="Icon" DesignTimeRectangle="264, 50, 22, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='tbar[0]/btn[3]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[3]' /&gt;" Guid="0f83416c-67ed-4073-8634-ba067b90d0c9" InformativeScreenshot="6b4ff3c7840aad53c703443dd9811f00.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Storage Locations Collectively: List' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                  <Throw Exception="[new BusinessRuleException(&quot;Storage Location &quot;+in_STloc+&quot; is already available in Plant ID: &quot;+in_Plant)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else - Create ST Location" sap:VirtualizedContainerService.HintSize="688,3478" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="626,1268" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                    <ui:InterruptibleWhile.Body>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,1122" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="SLvalue" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NGetText DisplayName="Get Text 'EX01'" sap:VirtualizedContainerService.HintSize="530,189" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="73358515-1845-415a-8118-984b2cddbc36" TextString="[SLvalue]" Version="V3">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable CVScreenId="96ef0b31-d645-44fa-97af-097c5c79d3bd" CvElementArea="31, 334, 34, 21" CvType="InputBox" DesignTimeRectangle="32, 291, 34, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;sap id='usr/sub:SAPMM03M:0195/ctxtRM03M-LGORT[{0},0]' /&gt;&quot;, row)]" FuzzySelectorArgument="&lt;sap id='usr/sub:SAPMM03M:0195/ctxtRM03M-LGORT[2,0]' /&gt;" Guid="c98b017b-a76b-4a5a-b3c5-a8d6711582c8" ImageBase64="" InformativeScreenshot="70618f05a5c7368d8538829fdfd09d19.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Storage Locations Collectively: List' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                          </uix:NGetText.Target>
+                        </uix:NGetText>
+                        <If Condition="[SLvalue.trim.Equals(&quot;&quot;)]" sap:VirtualizedContainerService.HintSize="530,848" sap2010:WorkflowViewState.IdRef="If_2">
+                          <If.Then>
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,497" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'SLOC Field'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,250" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="73358515-1845-415a-8118-984b2cddbc36" Text="[in_STloc]" Version="V3">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable CVScreenId="96ef0b31-d645-44fa-97af-097c5c79d3bd" CvElementArea="31, 401, 34, 21" CvType="InputBox" DesignTimeRectangle="32, 291, 34, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="[string.Format(&quot;&lt;sap id='usr/sub:SAPMM03M:0195/ctxtRM03M-LGORT[{0},0]' /&gt;&quot;, row)]" FuzzySelectorArgument="&lt;sap id='usr/sub:SAPMM03M:0195/ctxtRM03M-LGORT[5,0]' /&gt;" Guid="dfe50e8f-d5aa-42d0-acaa-54608d0482ac" ImageBase64="" InformativeScreenshot="e8068a89ed3ad7086f8915ad41bff095.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Storage Locations Collectively: List' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                                </uix:NTypeInto.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NTypeInto>
+                              <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[ST_Flag]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:Break sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="Break_1" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="496,190" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[row]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[row+1]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </ui:InterruptibleWhile.Body>
+                    <ui:InterruptibleWhile.Condition>
+                      <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="row&lt;=9" />
+                    </ui:InterruptibleWhile.Condition>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InterruptibleWhile>
+                  <If Condition="[ST_Flag]" DisplayName="If - Empty row not found for new st location" sap:VirtualizedContainerService.HintSize="626,2125" sap2010:WorkflowViewState.IdRef="If_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw Exception="[new BusinessRuleException(&quot;There is no row available for new Storage location in Plant &quot;+in_Plant+&quot; for material &quot;+in_MaterialName)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,1766" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="StatusMsg" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Save (Ctrl+S)'" sap:VirtualizedContainerService.HintSize="450,225" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="73358515-1845-415a-8118-984b2cddbc36" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable CVScreenId="e95f9ea2-df06-4f34-a8f0-7252be9f7ca3" CvElementArea="230, 50, 22, 22" CvType="Icon" DesignTimeRectangle="230, 50, 22, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='tbar[0]/btn[11]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[11]' /&gt;" Guid="dbd6e6ce-35a6-48c1-aee3-fd8861b90237" InformativeScreenshot="99f5cb2d37f2be423c4758e15505b75b.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Storage Locations Collectively: List' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                          <uix:NClick.VerifyOptions>
+                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                              <uix:VerifyExecutionOptions.Retry>
+                                <InArgument x:TypeArguments="x:Boolean" />
+                              </uix:VerifyExecutionOptions.Retry>
+                              <uix:VerifyExecutionOptions.Timeout>
+                                <InArgument x:TypeArguments="x:Double" />
+                              </uix:VerifyExecutionOptions.Timeout>
+                            </uix:VerifyExecutionOptions>
+                          </uix:NClick.VerifyOptions>
+                        </uix:NClick>
+                        <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="450,122" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                        <uix:NGetText DisplayName="Get Text - Status Bar" sap:VirtualizedContainerService.HintSize="450,189" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="73358515-1845-415a-8118-984b2cddbc36" TextString="[StatusMsg]" Version="V3">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="22, 1019, 1700, 29" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;sap id='sbar/pane[0]' /&gt;" FuzzySelectorArgument="&lt;sap id='sbar/pane[0]' /&gt;" Guid="82cf19e0-bc03-4257-a573-6f9632abe726" InformativeScreenshot="f6e1708db24e9cb8b786e4ee42cef050.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Storage Locations Collectively: List' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                          </uix:NGetText.Target>
+                        </uix:NGetText>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[StatusMsg]" />
+                        <If Condition="[StatusMsg.ToLower().Contains(&quot;function&quot;)]" sap:VirtualizedContainerService.HintSize="450,922" sap2010:WorkflowViewState.IdRef="If_4">
+                          <If.Then>
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <isactr:ConnectorActivity Configuration="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" ConnectionId="680939df-e40a-41ab-a2e8-04f47a4a0f5f" DisplayName="Send Message to User" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="ConnectorActivity_2" UiPathActivityTypeId="9a76a063-8903-3101-b158-e0435e77c45e">
+                                <isactr:ConnectorActivity.FieldObjects>
+                                  <isactr:FieldObject Name="channel" Type="FieldArgument">
+                                    <isactr:FieldObject.Value>
+                                      <InArgument x:TypeArguments="x:String">U074QGP5WAD</InArgument>
+                                    </isactr:FieldObject.Value>
+                                  </isactr:FieldObject>
+                                  <isactr:FieldObject Name="messageToSend" Type="FieldArgument">
+                                    <isactr:FieldObject.Value>
+                                      <InArgument x:TypeArguments="x:String">["ST location "+in_STloc +" added sucessfully in plant "+in_Plant+" or material "+in_MaterialName+". Storage location List: "+Avl_Loc+" and "+in_STloc]</InArgument>
+                                    </isactr:FieldObject.Value>
+                                  </isactr:FieldObject>
+                                  <isactr:FieldObject Name="send_as" Type="FieldArgument">
+                                    <isactr:FieldObject.Value>
+                                      <InArgument x:TypeArguments="x:String">bot</InArgument>
+                                    </isactr:FieldObject.Value>
+                                  </isactr:FieldObject>
+                                  <isactr:FieldObject Name="fields" Type="FieldArgument">
+                                    <isactr:FieldObject.Value>
+                                      <InArgument x:TypeArguments="x:String" />
+                                    </isactr:FieldObject.Value>
+                                  </isactr:FieldObject>
+                                  <isactr:FieldObject Name="buttons" Type="FieldArgument">
+                                    <isactr:FieldObject.Value>
+                                      <InArgument x:TypeArguments="x:String" />
+                                    </isactr:FieldObject.Value>
+                                  </isactr:FieldObject>
+                                  <isactr:FieldObject Name="image" Type="FieldArgument">
+                                    <isactr:FieldObject.Value>
+                                      <InArgument x:TypeArguments="x:String" />
+                                    </isactr:FieldObject.Value>
+                                  </isactr:FieldObject>
+                                  <isactr:FieldObject Name="parse" Type="FieldArgument" />
+                                  <isactr:FieldObject Name="link_names" Type="FieldArgument" />
+                                  <isactr:FieldObject Name="unfurl_links" Type="FieldArgument" />
+                                  <isactr:FieldObject Name="username" Type="FieldArgument" />
+                                  <isactr:FieldObject Name="icon_emoji" Type="FieldArgument" />
+                                  <isactr:FieldObject Name="out_ts" Type="FieldArgument">
+                                    <isactr:FieldObject.Value>
+                                      <OutArgument x:TypeArguments="x:String" />
+                                    </isactr:FieldObject.Value>
+                                  </isactr:FieldObject>
+                                  <isactr:FieldObject Name="Jit_send_message_to_user_v2" Type="FieldArgument">
+                                    <isactr:FieldObject.Value>
+                                      <OutArgument x:TypeArguments="uiascb:send_message_to_user_v2_Create" />
+                                    </isactr:FieldObject.Value>
+                                  </isactr:FieldObject>
+                                </isactr:ConnectorActivity.FieldObjects>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </isactr:ConnectorActivity>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Back (F3)'" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="73358515-1845-415a-8118-984b2cddbc36" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable CVScreenId="bbe8a758-09f0-434a-98a4-2607d052ccab" CvElementArea="264, 50, 22, 21" CvTextArea="270, 57, 12, 11" CvType="Icon" DesignTimeRectangle="264, 50, 22, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='tbar[0]/btn[3]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[3]' /&gt;" Guid="0f83416c-67ed-4073-8634-ba067b90d0c9" InformativeScreenshot="6b4ff3c7840aad53c703443dd9811f00.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Storage Locations Collectively: List' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,562" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'SLOC Field'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,250" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="73358515-1845-415a-8118-984b2cddbc36" Version="V3">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable CVScreenId="96ef0b31-d645-44fa-97af-097c5c79d3bd" CvElementArea="31, 401, 34, 21" CvType="InputBox" DesignTimeRectangle="32, 291, 34, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="[string.Format(&quot;&lt;sap id='usr/sub:SAPMM03M:0195/ctxtRM03M-LGORT[{0},0]' /&gt;&quot;, row)]" FuzzySelectorArgument="&lt;sap id='usr/sub:SAPMM03M:0195/ctxtRM03M-LGORT[5,0]' /&gt;" Guid="dfe50e8f-d5aa-42d0-acaa-54608d0482ac" ImageBase64="" InformativeScreenshot="e8068a89ed3ad7086f8915ad41bff095.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Storage Locations Collectively: List' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                                </uix:NTypeInto.Target>
+                                <uix:NTypeInto.Text>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <Literal x:TypeArguments="x:String" Value="" />
+                                  </InArgument>
+                                </uix:NTypeInto.Text>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NTypeInto>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Back (F3)'" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="73358515-1845-415a-8118-984b2cddbc36" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable CVScreenId="bbe8a758-09f0-434a-98a4-2607d052ccab" CvElementArea="264, 50, 22, 21" CvTextArea="270, 57, 12, 11" CvType="Icon" DesignTimeRectangle="264, 50, 22, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='tbar[0]/btn[3]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[3]' /&gt;" Guid="0f83416c-67ed-4073-8634-ba067b90d0c9" InformativeScreenshot="6b4ff3c7840aad53c703443dd9811f00.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Storage Locations Collectively: List' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Back (F3)'" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="73358515-1845-415a-8118-984b2cddbc36" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable CVScreenId="bbe8a758-09f0-434a-98a4-2607d052ccab" CvElementArea="264, 50, 22, 21" CvTextArea="270, 57, 12, 11" CvType="Icon" DesignTimeRectangle="264, 50, 22, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='tbar[0]/btn[3]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[3]' /&gt;" Guid="0f83416c-67ed-4073-8634-ba067b90d0c9" InformativeScreenshot="6b4ff3c7840aad53c703443dd9811f00.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Storage Locations Collectively: List' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                              <Throw Exception="[new BusinessRuleException(&quot;Storage location is invalid - &quot;+StatusMsg)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,133" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <isactr:ConnectorActivity Configuration="H4sIAAAAAAAACr1Y3W4buRV+FWJ6oQQYK7YTd1MHRmDLNqKtN3YtexdtEQjUDCVxPRrOkhzJqmFgr/oAvesL9MHyJP0OydHfSLLTJEUCWHNIHp7znX8+ROdSZKlpqdxymQsdHT5EHcF1MuS9TPjF6PDvn+KonRelnREeoo98JKLDCBvzXGRRHJ1KU2R8GuitOV2YRMvCSpWDfjMtBLNDwXLsY0qz9ilTfUcpyl4mE6IVWo65FSwwZ1axyVAmQ7dtJIzhA/wtjWU9wYzIbZO1+7Pd0rBcWdZXZZ4ymbtDqVbFTqomecymqmQJz1lfajCAbCrLlvcwKwOpp6xVI7p/ICzjgcrHXGaET3WlYRxXYQlHK/0qaaCOFlZLMV6mO/37Gtw7GU/uGC8KaM8JJvb5n/9i13IwtCwB7Y6BZIfczs7SeqtaabRUMW2sobkr/MIVN8bfrgop0mUhJtIOVWlZ4w8NmIsMBDsZiJwP8N1R2l7qlFxjL44ulLorC/KSy96vIrGVF5Qa9kq7FR7vCQZz5C1aUeNg1uo7qtj9zLOSuMgUpCtuh/j9qsay73zvSKYxST07TBKQR0aBCiafHp3XyQEc7gHbeHoyPRV9XmY2OrS6FLhFGRk88krLEdfTCIecex8ntBC8/lqYAh+iOnctfiulFmn17U5cKG83MDtR6RRCXOYtno+58dse41m4BOe9UR2Rp7Wg+cmv1oMGlusrPeIWiDAr7m0VM1UwwENnoXAzRATgP8+M8psQ2qzRy1Ry18Aep5/jst3c+4sorgfsa+GAwGkX9FUgCB3m6UtA/DIUUEiTunR0CQLuPfy4KChsmWyKJisNtGIn+LTqDtGJYET4ayOy/uKGW+N4Ysf77ZC8JoGcI1U+i6uijWExSxRdx9zUPH7s/s6dfuOBVS/3B5cdPUAIXlZoQuuBNj86Hl8VAttt/JdS6K1G9oG7ydnZfHnJ1C5lubVXTllTpXIfCId+be/QLb5zH/vho9mkIBCm4s24Rnb3lyN+eiJTk3lgLAYE3bG/k6isHOXhoiaDWj6WChJpzLUkCxlmSlQkeF37NHaJNGbI8TlcTcvBAA6FnIqSyYRNmtu96s3TgfalgdUrUbjyOugnns54sPAq6n49LKMOq0JoKz34iRqN+I4RBXeZeWaIsLl9+qJylZdxRSRcFsnGTjPxovCKvUp5DqBATlSOcgxuzhDSZmKVBuPMSEzdrWxiqcinntZkP/F7dsA8ApWibC52b8oa7xquBUDKhIpjmYq0yc7uK1X2YiQR0EUcBH0XFvbja0HhHXvB45a/Pe6UWryP/ypM/FF9/v0/7BiNQh3CF+I+EQXqrAOh8dK5ZYIuRo1elZSBUtFHDwZRjufgmRjAmlmzU+bytxK5bqSQtoKR4aFr4POIzZGaIzRnZqiaqIHLqU/46MG391Ec9LVuyUPbRGW31xdrqyDoVelD3Ko8xd3MMWJIezwZjlwE+mo4BMBURhC4erViugwRTk6o3ePZhE8NnUOjtdD7hWNgCxeeFRtXTLcj9sdvjxj0MHXEzn1nQIVMOazgam7nyxqE1JVD+iHyX9DEJ0erBcVG0zeKjVzlaBz7rnUdIT7AeQhFdSbzO9/rulTY6JdZ1iC0oaUCG0OdbMOQI1OlqXoWD80WqH6Io7O8HLm5oiqNJAMwmhPosujx0wZUO5U3/C+4kl5dF201cC+w5ANxWzNCDBwu5H4UhNWo4OJ6oFVZALcS/gSREizCab1faTSYVIAwHbhbnDkCFzhvqHmuNgWLLbQoPaUywfNlMN9+D4TKvF/qrOscoIbRrVt0IGxFKZRgP+xpMZZiUoWX96yv0vtP30Vv2C+0XCuFFD1ltbCk72UO45qyKCAZFKHhijVo9w11dKg7CuOMy+/I2y75y3+IKuEgdpzH+LlsKJGsqc+lAKzi1Scu6nDD8AZPQ9IKIecSOmvcSuooG+RkGIWHdB4DAQUt+rjtM97uc2BcHYu+OPWDVxep5Ve5Flha/rbAfv793+hhsMWfQ+13ty+M8sHjJkrfmYInKBDIq0zc81FB5bNxiEFU2y4d75bFhOvUdJE287ThHh8ms1ZiztzN7OE1YvNFMZN2ZkafSJ+y0d73cHVnE8RxvSITbGFhySJUjOFt0NfXUfyG91aDmEObagj8j0K7Gm1XFVsr54JcdojilHbt5gnCSnC3MNTalgEPTC9mO16uDs40Mq8R6lkOvjTXW55yy5tuBOgWfJph5mq6F41Vof3OMCyEnZDy+0nhur7nClJt/say0IPQUyKEPV99s75LJ3n9sopcKyJPMdSiyKbdngY8CTe2xvma1tni+hdfEerrSKSSb6qv1eIzmaNTunQTaP3R9kdpu+7pJUQBXhuqd7bueP/5b7mIozDkutcYsJhV67mcvhY127kVA0xgONoReiyRYWnMGSN3oah1fjlD6Xc/W+dvfjh+c7x7fnC+Rchuy7WszRM88mLoe3JjzNbxbZ7Z6w8n+1fHtz+e7ZlyN0lfJyfXnSJmPwttIOrRXnOX/uE4qivGvKNclFbzLGZX7nHzz2Lq6s9RTu2pfy1BqokO+3gyWOOs3iS1PIz3dQOruN21zPz/TX2zyvJY16b+HOq/W/6xdlOEblD6kd6v2jmkyxNxhfEcOQOwU1EL8OOsMwCOtnx5VxqIU8DIAl61YzheYlBkErHjhg9sDF41DXpVosXLT3Nb3f+DtQVy01BBI6qvluppC9OlSBfe75yg1Vs2RVebtrd2X7/52/HHt29vOnOrtdyLknvAq6YAle+gL5D98OZPJl48iujtOIv46W6VT1TziE182Q5b5Osw96qcaDVBs9m2YkSqgH4FBIHHIvgHy+DPl/abb5sHX4TqJSbIyiN8UNagvuzcLLyGbuV2gUm2pERzGAlKgnj1ucJnB00fdbG76GM/cHOCe+6Aoh98oaZz5Mf/ArrrkGT4GgAA" ConnectionId="680939df-e40a-41ab-a2e8-04f47a4a0f5f" DisplayName="Send Message to Channel - Success" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="ConnectorActivity_1" UiPathActivityTypeId="37a305b2-89b1-315d-b73f-1778839a6c47">
+                                <isactr:ConnectorActivity.FieldObjects>
+                                  <isactr:FieldObject Name="channel" Type="FieldArgument">
+                                    <isactr:FieldObject.Value>
+                                      <InArgument x:TypeArguments="x:String">C034ZAN88TS</InArgument>
+                                    </isactr:FieldObject.Value>
+                                  </isactr:FieldObject>
+                                  <isactr:FieldObject Name="messageToSend" Type="FieldArgument">
+                                    <isactr:FieldObject.Value>
+                                      <InArgument x:TypeArguments="x:String">["ST location "+in_STloc +" added sucessfully in plant "+in_Plant+" or material "+in_MaterialName+". Storage location List: "+in_STloc+"Shift_Enter"+Avl_Loc]</InArgument>
+                                    </isactr:FieldObject.Value>
+                                  </isactr:FieldObject>
+                                  <isactr:FieldObject Name="send_as" Type="FieldArgument">
+                                    <isactr:FieldObject.Value>
+                                      <InArgument x:TypeArguments="x:String">bot</InArgument>
+                                    </isactr:FieldObject.Value>
+                                  </isactr:FieldObject>
+                                  <isactr:FieldObject Name="fields" Type="FieldArgument">
+                                    <isactr:FieldObject.Value>
+                                      <InArgument x:TypeArguments="x:String" />
+                                    </isactr:FieldObject.Value>
+                                  </isactr:FieldObject>
+                                  <isactr:FieldObject Name="buttons" Type="FieldArgument">
+                                    <isactr:FieldObject.Value>
+                                      <InArgument x:TypeArguments="x:String" />
+                                    </isactr:FieldObject.Value>
+                                  </isactr:FieldObject>
+                                  <isactr:FieldObject Name="image" Type="FieldArgument">
+                                    <isactr:FieldObject.Value>
+                                      <InArgument x:TypeArguments="x:String" />
+                                    </isactr:FieldObject.Value>
+                                  </isactr:FieldObject>
+                                  <isactr:FieldObject Name="parse" Type="FieldArgument" />
+                                  <isactr:FieldObject Name="link_names" Type="FieldArgument" />
+                                  <isactr:FieldObject Name="unfurl_links" Type="FieldArgument" />
+                                  <isactr:FieldObject Name="username" Type="FieldArgument">
+                                    <isactr:FieldObject.Value>
+                                      <InArgument x:TypeArguments="x:String" />
+                                    </isactr:FieldObject.Value>
+                                  </isactr:FieldObject>
+                                  <isactr:FieldObject Name="icon_emoji" Type="FieldArgument">
+                                    <isactr:FieldObject.Value>
+                                      <InArgument x:TypeArguments="x:String" />
+                                    </isactr:FieldObject.Value>
+                                  </isactr:FieldObject>
+                                  <isactr:FieldObject Name="Jit_send_message_to_channel_v2" Type="FieldArgument">
+                                    <isactr:FieldObject.Value>
+                                      <OutArgument x:TypeArguments="uiascb1:send_message_to_channel_v2_Create" />
+                                    </isactr:FieldObject.Value>
+                                  </isactr:FieldObject>
+                                  <isactr:FieldObject Name="out_ts" Type="FieldArgument">
+                                    <isactr:FieldObject.Value>
+                                      <OutArgument x:TypeArguments="x:String" />
+                                    </isactr:FieldObject.Value>
+                                  </isactr:FieldObject>
+                                </isactr:ConnectorActivity.FieldObjects>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </isactr:ConnectorActivity>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:CommentOut>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1744, 1056" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE8SURBVFhHYxgFo2AUjIJBAxxrVls61ay5T2dcC7Ue7AAnoMB/emHHmjWz7KtXMkGtp68DgJbPsCtfzQi1GgLo5QCg5dMcy1cgLH//5UcECG89fa+5dsnR/5Ti0nkH/ztWrcJuefWaKXYVq1B9/v7Lz//Uwk/ffP6f3LX2v335cmyWT7KqQPI5DGAziBwMsjy+ddl/m6IFQMtWo1s+wbZ4CablIIDNMFLxk9ef/se1LMVuec2aPrMStGBHBtgMJAWDLI8FWV6M1fIeqDW4AdCQxSB89f7LfWsPXfm/9uBlknBsCzDYsVlevboLagVxwKZovotd6ZL/diWLScL25cuwWL6mA2os8QBoCFXKAWCwt0GNJA1QqSBqhhpHOqDUAUCfN0KNIg8AHaAJNGg+mTgXaswoGAWjYBSQCBgYAMLf0dVJBbU9AAAAAElFTkSuQmCC" InformativeScreenshot="12efe5274bc18d2cf7b813089fdc8b67.png" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Storage Locations Collectively: Initial Screen' /&gt;" Title="Enter Storage Locations Collectively: Initial Screen" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

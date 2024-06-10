@@ -1,0 +1,1000 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" this:Process.count="2" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ugage="clr-namespace:UiPath.GSuite.Activities.Gmail.Enums;assembly=UiPath.GSuite.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CF47A4A0F5F_send_message_to_channel_v2_Create.Bundle;assembly=CF47A4A0F5F_send_mes.EtRHB2PAUJE1su0cd3cBRSp" xmlns:uiascb1="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CF47A4A0F5F_send_message_to_user_v2_Create.Bundle;assembly=CF47A4A0F5F_send_mes.FXEv54h54PJ1bJefA1Twen3" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.GSuite.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="count" Type="InArgument(x:Int32)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1026,5804</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="100">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.GSuite.Activities.Sheets</x:String>
+      <x:String>UiPath.GSuite.Activities.Sheets.Enums</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.BAF.Enums</x:String>
+      <x:String>UiPath.BAF.ServiceInterfaces</x:String>
+      <x:String>UiPath.BAF.Models.Entity</x:String>
+      <x:String>UiPath.BAF.Models.CrudOperation</x:String>
+      <x:String>UiPath.BAF.Telemetry</x:String>
+      <x:String>UiPath.BAF.Models.Response</x:String>
+      <x:String>UiPath.Slack.Activities.Messages</x:String>
+      <x:String>UiPath.Slack.Activities</x:String>
+      <x:String>UiPath.CodeGen.Activities</x:String>
+      <x:String>UiPath.BAF.Activities</x:String>
+      <x:String>UiPath.Slack.Enums</x:String>
+      <x:String>UiPath.Swagger.Models</x:String>
+      <x:String>UiPath.CodeGen.Models.Connection</x:String>
+      <x:String>UiPath.Slack.Models</x:String>
+      <x:String>UiPath.BAF.Models.Connection</x:String>
+      <x:String>UiPath.BAF.Models.Connection.APIConnection</x:String>
+      <x:String>UiPath.BAF.Activities.ContextModel</x:String>
+      <x:String>UiPath.BAF.Models</x:String>
+      <x:String>System.Security</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="80">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>UiPath.Slack</AssemblyReference>
+      <AssemblyReference>UiPath.Slack.Activities</AssemblyReference>
+      <AssemblyReference>CF47A4A0F5F_send_rep.ZuV6a4fno7H1psUw03A3vHz2</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>CF47A4A0F5F_send_mes.EtRHB2PAUJE1su0cd3cBRSp</AssemblyReference>
+      <AssemblyReference>CF47A4A0F5F_send_mes.FXEv54h54PJ1bJefA1Twen3</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="784,5739" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="SupplierName" />
+      <Variable x:TypeArguments="x:String" Name="PurchaseOrg" />
+      <Variable x:TypeArguments="x:String" Name="PurchaseGroup" />
+      <Variable x:TypeArguments="x:String" Name="CompanyCode" />
+      <Variable x:TypeArguments="x:String" Name="Reason" />
+      <Variable x:TypeArguments="x:String" Name="Material" />
+      <Variable x:TypeArguments="x:String" Name="PO_Quantity" />
+      <Variable x:TypeArguments="x:String" Name="ST_Location" />
+      <Variable x:TypeArguments="x:String" Name="Vehicle_Number" />
+      <Variable x:TypeArguments="x:String" Name="Vehicle_Type" />
+      <Variable x:TypeArguments="x:Boolean" Name="GAPL_flag" />
+      <Variable x:TypeArguments="x:String" Name="Plant" />
+      <Variable x:TypeArguments="x:String" Name="PONumber" />
+      <Variable x:TypeArguments="x:String" Name="OrderType" />
+      <Variable x:TypeArguments="x:String" Name="EntryNumber" />
+      <Variable x:TypeArguments="x:String" Name="MaterialDoc_Number" />
+      <Variable x:TypeArguments="x:String" Name="I_ST_Location" />
+      <Variable x:TypeArguments="x:String" Name="Picked_Quantity" />
+      <Variable x:TypeArguments="x:String" Name="POthreshold" />
+      <Variable x:TypeArguments="x:String" Name="Percentage" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="722,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="722,88" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <ui:IfElseIfV2 Condition="[in_TransactionItem.SpecificContent(&quot;Order Type&quot;).ToString().Trim.Contains(&quot;Input Procurement&quot;)]" DisplayName="Else if" sap:VirtualizedContainerService.HintSize="722,5318" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+      <ui:IfElseIfV2.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw Exception="[new Exception(&quot;The Order Type : &quot; + in_TransactionItem.SpecificContent(&quot;Order Type&quot;).ToString + &quot; is out of scope&quot;)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_3" />
+        </Sequence>
+      </ui:IfElseIfV2.Else>
+      <ui:IfElseIfV2.ElseIfs>
+        <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+          <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_TransactionItem.SpecificContent(&quot;Order Type&quot;).ToString().Trim.Contains(&quot;Stock Transp.&quot;)]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_1">
+            <ui:IfElseIfBlock.Then>
+              <Sequence DisplayName="Body - Process STO" sap:VirtualizedContainerService.HintSize="603,2588" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Name="STOnumber" />
+                  <Variable x:TypeArguments="x:String" Name="Delivery_Number" />
+                  <Variable x:TypeArguments="x:String" Name="ClientID" />
+                  <Variable x:TypeArguments="ss:SecureString" Name="ClientSecret" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Sequence DisplayName="Sequence - Input Validation" sap:VirtualizedContainerService.HintSize="541,1550" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,489" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_25">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[SupplierName]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Supplier Name").ToString().Trim().ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_26">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[PurchaseOrg]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Purchase Org").ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_27">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[PurchaseGroup]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("PurchaseGroup").ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_28">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[CompanyCode]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("CompanyCode").ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_29">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[Reason]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Reason").ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_30">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[Material]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Material").ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_31">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[PO_Quantity]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("PO Quantity").ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_32">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[ST_Location]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("ST_Location").ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_33">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[I_ST_Location]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Issuing ST_LOC").ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_34">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[Picked_Quantity]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Picked Quantity").ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_35">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[Plant]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Plant").ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_36">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[OrderType]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Order Type").ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:MultipleAssign>
+                  <If Condition="[(SupplierName.Trim() &lt;&gt; &quot;&quot;) And (PurchaseOrg.Trim() &lt;&gt; &quot;&quot;) And (PurchaseGroup.Trim() &lt;&gt; &quot;&quot;) And (CompanyCode.Trim() &lt;&gt; &quot;&quot;) And (Reason.Trim() &lt;&gt; &quot;&quot;) And (Material.Trim() &lt;&gt; &quot;&quot;) And (PO_Quantity.Trim() &lt;&gt; &quot;&quot;) And (ST_Location.Trim() &lt;&gt; &quot;&quot;) And (Picked_Quantity.Trim() &lt;&gt; &quot;&quot;) And (I_ST_Location.Trim() &lt;&gt; &quot;&quot;)]" sap:VirtualizedContainerService.HintSize="479,941" sap2010:WorkflowViewState.IdRef="If_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,22" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,758" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;Hi Team,&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;The Order details are missing. Kindly Validate the &lt;/SPAN&gt;&lt;SPAN&gt;below details&lt;/SPAN&gt;&lt;SPAN&gt;.&lt;/SPAN&gt;&lt;/P&gt;&lt;UL&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Order Type - &lt;/SPAN&gt;&lt;SPAN&gt;{0}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;/UL&gt;&lt;UL&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Supplier Name - &lt;/SPAN&gt;&lt;SPAN&gt;{1}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Purchase Org - &lt;/SPAN&gt;&lt;SPAN&gt;{2}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Purchase Grp - &lt;/SPAN&gt;&lt;SPAN&gt;{3}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Company Code - &lt;/SPAN&gt;&lt;SPAN&gt;{4}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Reason - &lt;/SPAN&gt;&lt;SPAN&gt;{5}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Material - &lt;/SPAN&gt;&lt;SPAN&gt;{6}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Plant - &lt;/SPAN&gt;&lt;SPAN&gt;{7}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;PO quantity - &lt;/SPAN&gt;&lt;SPAN&gt;{8}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;ST Location -&lt;/SPAN&gt;&lt;SPAN&gt; &lt;/SPAN&gt;&lt;SPAN&gt;{9}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Vehicle Number - &lt;/SPAN&gt;&lt;SPAN&gt;{10}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Vehicle Type - &lt;/SPAN&gt;&lt;SPAN&gt;{11}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;/UL&gt;&lt;P&gt;&lt;SPAN&gt;Regards,&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;RPA BOT&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;/P&gt;&quot;, OrderType, SupplierName, PurchaseOrg, PurchaseGroup, CompanyCode, Reason, Material, Plant, PO_Quantity, ST_Location, Vehicle_Number, Vehicle_Type)]" ConnectionId="00442e36-7410-4807-a83e-80dbcbf943b2" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="354,560" sap2010:WorkflowViewState.IdRef="SendEmailConnections_3" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="Business exception: Missing input for STO" To="[New String(){&quot;madhawi.kumari@agrevolution.in&quot;}]" UseConnectionService="True">
+                          <uga:SendEmailConnections.Attachments>
+                            <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)" />
+                          </uga:SendEmailConnections.Attachments>
+                          <uga:SendEmailConnections.AttachmentsBackup>
+                            <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
+                              <usau:BackupSlot.BackupValues>
+                                <scg:Dictionary x:TypeArguments="ugage:AttachmentInputMode, scg:List(x:Object)" />
+                              </usau:BackupSlot.BackupValues>
+                            </usau:BackupSlot>
+                          </uga:SendEmailConnections.AttachmentsBackup>
+                          <uga:SendEmailConnections.InputTypeBackup>
+                            <usau:BackupSlot x:TypeArguments="ugage:BodyInputType" StoredValue="HTML">
+                              <usau:BackupSlot.BackupValues>
+                                <scg:Dictionary x:TypeArguments="ugage:BodyInputType, scg:List(x:Object)" />
+                              </usau:BackupSlot.BackupValues>
+                            </usau:BackupSlot>
+                          </uga:SendEmailConnections.InputTypeBackup>
+                        </uga:SendEmailConnections>
+                        <Throw Exception="[new BusinessRuleException(&quot;BE:Inavlid Input Details&quot;)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP Flow\SAP_STOcreation.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="541,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="SAP Flow\SAP_STOcreation.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Tcode">[in_Config("PO_Tcode").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_SupplierName">[SupplierName]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_PurchaseOrg">[PurchaseOrg]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_PurchaseGroup">[PurchaseGroup]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_CompanyCode">[CompanyCode]</InArgument>
+                    <OutArgument x:TypeArguments="x:Boolean" x:Key="O_GAPLflag" />
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Reason">[Reason]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Material">[Material]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_POquantity">[PO_Quantity]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Plant">[Plant]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_St_Location">[ST_Location]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_OrderType">[OrderType]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Issuing_STloc">[I_ST_Location]</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="Out_STONumber">[STOnumber]</OutArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP Flow\~SAP_CreateDelievery_STO.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="541,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="SAP Flow\~SAP_CreateDelievery_STO.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_TCode">[in_Config("DelSTO_Tcode").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Stonumber">[STOnumber]</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="O_Del_No">[Delivery_Number]</OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_PickedQty">[Picked_Quantity]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP Flow\SAP_GRPO(Goods Movement) - STO.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="541,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="SAP Flow\SAP_GRPO(Goods Movement) - STO.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Tcode">[in_Config("GRPO_Tcode").ToString]</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="Out_MaterialDocument">[MaterialDoc_Number]</OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_DeliveryNumber">[Delivery_Number]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_StoNumber">[STOnumber]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <isactr:ConnectorActivity Configuration="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" ConnectionId="680939df-e40a-41ab-a2e8-04f47a4a0f5f" DisplayName="Send Message to Channel - Success" sap:VirtualizedContainerService.HintSize="541,470" sap2010:WorkflowViewState.IdRef="ConnectorActivity_4" UiPathActivityTypeId="37a305b2-89b1-315d-b73f-1778839a6c47">
+                  <isactr:ConnectorActivity.FieldObjects>
+                    <isactr:FieldObject Name="channel" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String">C034ZAN88TS</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="messageToSend" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String" xml:space="preserve">["QA - STO processed Successfully  -&gt;"+"STO Number : "+STOnumber+";Delivery Number:"+Delivery_Number+";MaterialDoc Number:"+MaterialDoc_Number+";Plant:"+Plant+";Material:"+Material+";Stock Location:"+ST_Location+";Issuing_St_Location:"+I_ST_Location]</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="send_as" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String">bot</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="fields" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="buttons" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="image" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="parse" Type="FieldArgument" />
+                    <isactr:FieldObject Name="link_names" Type="FieldArgument" />
+                    <isactr:FieldObject Name="unfurl_links" Type="FieldArgument" />
+                    <isactr:FieldObject Name="username" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="icon_emoji" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="Jit_send_message_to_channel_v2" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <OutArgument x:TypeArguments="uiascb:send_message_to_channel_v2_Create" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="out_ts" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <OutArgument x:TypeArguments="x:String" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                  </isactr:ConnectorActivity.FieldObjects>
+                </isactr:ConnectorActivity>
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="541,48" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,133" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <isactr:ConnectorActivity Configuration="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" ConnectionId="680939df-e40a-41ab-a2e8-04f47a4a0f5f" DisplayName="Send Message to User" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="ConnectorActivity_11" UiPathActivityTypeId="9a76a063-8903-3101-b158-e0435e77c45e">
+                        <isactr:ConnectorActivity.FieldObjects>
+                          <isactr:FieldObject Name="channel" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <InArgument x:TypeArguments="x:String">U074QGP5WAD</InArgument>
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                          <isactr:FieldObject Name="messageToSend" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <InArgument x:TypeArguments="x:String" xml:space="preserve">["STO processed Successfully  "+"STO Number : "+STOnumber+";Delivery Number:"+Delivery_Number+";MaterialDoc Number:"+MaterialDoc_Number+";Plant:"+Plant+";Material:"+Material+";Stock Location:"+ST_Location+";Issuing_St_Location:"+I_ST_Location]</InArgument>
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                          <isactr:FieldObject Name="send_as" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <InArgument x:TypeArguments="x:String">bot</InArgument>
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                          <isactr:FieldObject Name="fields" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <InArgument x:TypeArguments="x:String">["STO Number : "+STOnumber+";devlivery:"+STOnumber]</InArgument>
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                          <isactr:FieldObject Name="buttons" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <InArgument x:TypeArguments="x:String" />
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                          <isactr:FieldObject Name="image" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <InArgument x:TypeArguments="x:String" />
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                          <isactr:FieldObject Name="parse" Type="FieldArgument" />
+                          <isactr:FieldObject Name="link_names" Type="FieldArgument" />
+                          <isactr:FieldObject Name="unfurl_links" Type="FieldArgument" />
+                          <isactr:FieldObject Name="username" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <InArgument x:TypeArguments="x:String" />
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                          <isactr:FieldObject Name="icon_emoji" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <InArgument x:TypeArguments="x:String" />
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                          <isactr:FieldObject Name="out_ts" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <OutArgument x:TypeArguments="x:String" />
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                          <isactr:FieldObject Name="Jit_send_message_to_user_v2" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <OutArgument x:TypeArguments="uiascb1:send_message_to_user_v2_Create" />
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                        </isactr:ConnectorActivity.FieldObjects>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </isactr:ConnectorActivity>
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CommentOut>
+              </Sequence>
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+        </sc:BindingList>
+      </ui:IfElseIfV2.ElseIfs>
+      <ui:IfElseIfV2.Then>
+        <Sequence DisplayName="Then - Process PO" sap:VirtualizedContainerService.HintSize="688,2268" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Double" Name="Temp_POqty" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Sequence - Input Validation" sap:VirtualizedContainerService.HintSize="626,57" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,551" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[SupplierName]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Supplier Name").ToString().Trim().ToString]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[PurchaseOrg]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Purchase Org").ToString]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[PurchaseGroup]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("PurchaseGroup").ToString]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[CompanyCode]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("CompanyCode").ToString]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[Reason]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Reason").ToString]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[Material]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Material").ToString]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[PO_Quantity]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("PO Quantity").ToString]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[ST_Location]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("ST_Location").ToString]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[Vehicle_Number]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Vehicle Number").ToString]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[Vehicle_Type]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Vehicle type").ToString]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_23">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[Plant]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Plant").ToString]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_24">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[OrderType]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Order Type").ToString]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_37">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[POthreshold]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[in_Config("PO Threshold").ToString]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_38">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[Percentage]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[in_Config("Percenatge division").ToString]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:MultipleAssign>
+            <If Condition="[(SupplierName.Trim() &lt;&gt; &quot;&quot;) And (PurchaseOrg.Trim() &lt;&gt; &quot;&quot;) And (PurchaseGroup.Trim() &lt;&gt; &quot;&quot;) And (CompanyCode.Trim() &lt;&gt; &quot;&quot;) And (Reason.Trim() &lt;&gt; &quot;&quot;) And (Material.Trim() &lt;&gt; &quot;&quot;) And (PO_Quantity.Trim&lt;&gt;&quot;&quot;) And (ST_Location.Trim() &lt;&gt; &quot;&quot;) And (Vehicle_Number.Trim() &lt;&gt; &quot;&quot;) And (Vehicle_Type.Trim() &lt;&gt; &quot;&quot;)]" sap:VirtualizedContainerService.HintSize="479,941" sap2010:WorkflowViewState.IdRef="If_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,22" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,758" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;Hi Team,&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;The Order details are missing. Kindly Validate the &lt;/SPAN&gt;&lt;SPAN&gt;below details&lt;/SPAN&gt;&lt;SPAN&gt;.&lt;/SPAN&gt;&lt;/P&gt;&lt;UL&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Order Type - &lt;/SPAN&gt;&lt;SPAN&gt;{0}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;/UL&gt;&lt;UL&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Supplier Name - &lt;/SPAN&gt;&lt;SPAN&gt;{1}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Purchase Org - &lt;/SPAN&gt;&lt;SPAN&gt;{2}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Purchase Grp - &lt;/SPAN&gt;&lt;SPAN&gt;{3}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Company Code - &lt;/SPAN&gt;&lt;SPAN&gt;{4}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Reason - &lt;/SPAN&gt;&lt;SPAN&gt;{5}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Material - &lt;/SPAN&gt;&lt;SPAN&gt;{6}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Plant - &lt;/SPAN&gt;&lt;SPAN&gt;{7}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;PO quantity - &lt;/SPAN&gt;&lt;SPAN&gt;{8}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;ST Location -&lt;/SPAN&gt;&lt;SPAN&gt; &lt;/SPAN&gt;&lt;SPAN&gt;{9}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Vehicle Number - &lt;/SPAN&gt;&lt;SPAN&gt;{10}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;LI&gt;&lt;P&gt;&lt;SPAN&gt;Vehicle Type - &lt;/SPAN&gt;&lt;SPAN&gt;{11}&lt;/SPAN&gt;&lt;/P&gt;&lt;/LI&gt;&lt;/UL&gt;&lt;P&gt;&lt;SPAN&gt;Regards,&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;RPA BOT&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;/P&gt;&quot;, OrderType, SupplierName, PurchaseOrg, PurchaseGroup, CompanyCode, Reason, Material, Plant, PO_Quantity, ST_Location, Vehicle_Number, Vehicle_Type)]" ConnectionId="00442e36-7410-4807-a83e-80dbcbf943b2" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="354,560" sap2010:WorkflowViewState.IdRef="SendEmailConnections_2" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="Business exception: Missing input for PO" To="[New String(){&quot;madhawi.kumari@agrevolution.in&quot;}]" UseConnectionService="True">
+                    <uga:SendEmailConnections.Attachments>
+                      <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)" />
+                    </uga:SendEmailConnections.Attachments>
+                    <uga:SendEmailConnections.AttachmentsBackup>
+                      <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
+                        <usau:BackupSlot.BackupValues>
+                          <scg:Dictionary x:TypeArguments="ugage:AttachmentInputMode, scg:List(x:Object)" />
+                        </usau:BackupSlot.BackupValues>
+                      </usau:BackupSlot>
+                    </uga:SendEmailConnections.AttachmentsBackup>
+                    <uga:SendEmailConnections.InputTypeBackup>
+                      <usau:BackupSlot x:TypeArguments="ugage:BodyInputType" StoredValue="HTML">
+                        <usau:BackupSlot.BackupValues>
+                          <scg:Dictionary x:TypeArguments="ugage:BodyInputType, scg:List(x:Object)" />
+                        </usau:BackupSlot.BackupValues>
+                      </usau:BackupSlot>
+                    </uga:SendEmailConnections.InputTypeBackup>
+                  </uga:SendEmailConnections>
+                  <Throw Exception="[new BusinessRuleException(&quot;BE:Inavlid Input Details&quot;)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP Flow\SAP_POcreation.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="626,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="SAP Flow\SAP_POcreation.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Tcode">[in_Config("PO_Tcode").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SupplierName">[SupplierName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_PurchaseOrg">[PurchaseOrg]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_PurchaseGroup">[PurchaseGroup]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_CompanyCode">[CompanyCode]</InArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="O_GAPLflag">[GAPL_flag]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Reason">[Reason]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Material">[Material]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_POquantity">[PO_Quantity]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Plant">[Plant]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_St_Location">[ST_Location]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="Out_PONumber">[PONumber]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_OrderType">[OrderType]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <If Condition="[PO_Quantity&gt;=POthreshold]" DisplayName="If - Multiple GRN required" sap:VirtualizedContainerService.HintSize="626,1981" sap2010:WorkflowViewState.IdRef="If_5">
+            <If.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="592,1573" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Double">[Temp_POqty]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Double">[Math.Ceiling((Convert.ToDouble(Percentage) / 100) * Convert.ToDouble(PO_Quantity))]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[count&gt;0]" DisplayName="While" sap:VirtualizedContainerService.HintSize="530,1374" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                  <ui:InterruptibleWhile.Body>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,1237" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[count]" />
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP Flow\SAP_Get_GateEntryPass.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="SAP Flow\SAP_Get_GateEntryPass.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Tcode">[in_Config("GE_Tcode").ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_POnumber">[PONumber]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Quantity">[Temp_POqty.ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_VehicleNumber">[in_TransactionItem.SpecificContent("Vehicle Number").ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_VehicleType">[in_TransactionItem.SpecificContent("Vehicle type").ToString]</InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="Out_EntryNumber">[EntryNumber]</OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeWorkflowFile>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP Flow\SAP_GRPO(Goods Movement).xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="SAP Flow\SAP_GRPO(Goods Movement).xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Tcode">[in_Config("GRPO_Tcode").ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_PoNumber">[PONumber]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_GateEntryNumber">[EntryNumber]</InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="Out_MaterialDocument">[MaterialDoc_Number]</OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeWorkflowFile>
+                      <isactr:ConnectorActivity Configuration="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" ConnectionId="680939df-e40a-41ab-a2e8-04f47a4a0f5f" DisplayName="Send Message to Channel - Success" sap:VirtualizedContainerService.HintSize="434,470" sap2010:WorkflowViewState.IdRef="ConnectorActivity_10" UiPathActivityTypeId="37a305b2-89b1-315d-b73f-1778839a6c47">
+                        <isactr:ConnectorActivity.FieldObjects>
+                          <isactr:FieldObject Name="channel" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <InArgument x:TypeArguments="x:String">C034ZAN88TS</InArgument>
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                          <isactr:FieldObject Name="messageToSend" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <InArgument x:TypeArguments="x:String" xml:space="preserve">["QA - SAP PO executed successfully(Multiple GRN Case)  -&gt;"+"PO Number : "+PONumber+";Entry Number:"+EntryNumber+";MaterialDocNumber:"+MaterialDoc_Number+";Plant:"+Plant+";Material:"+Material+";Stock Location:"+ST_Location+";Po_Quantity:"+Temp_POqty.ToString]</InArgument>
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                          <isactr:FieldObject Name="send_as" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <InArgument x:TypeArguments="x:String">bot</InArgument>
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                          <isactr:FieldObject Name="fields" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <InArgument x:TypeArguments="x:String" />
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                          <isactr:FieldObject Name="buttons" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <InArgument x:TypeArguments="x:String" />
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                          <isactr:FieldObject Name="image" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <InArgument x:TypeArguments="x:String" />
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                          <isactr:FieldObject Name="parse" Type="FieldArgument" />
+                          <isactr:FieldObject Name="link_names" Type="FieldArgument" />
+                          <isactr:FieldObject Name="unfurl_links" Type="FieldArgument" />
+                          <isactr:FieldObject Name="username" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <InArgument x:TypeArguments="x:String" />
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                          <isactr:FieldObject Name="icon_emoji" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <InArgument x:TypeArguments="x:String" />
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                          <isactr:FieldObject Name="Jit_send_message_to_channel_v2" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <OutArgument x:TypeArguments="uiascb:send_message_to_channel_v2_Create" />
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                          <isactr:FieldObject Name="out_ts" Type="FieldArgument">
+                            <isactr:FieldObject.Value>
+                              <OutArgument x:TypeArguments="x:String" />
+                            </isactr:FieldObject.Value>
+                          </isactr:FieldObject>
+                        </isactr:ConnectorActivity.FieldObjects>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </isactr:ConnectorActivity>
+                      <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Double">[Temp_POqty]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Double">[Convert.ToDouble(PO_Quantity) - Convert.ToDouble(Temp_POqty)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_3">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[count-1]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </ui:InterruptibleWhile.Body>
+                </ui:InterruptibleWhile>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,247" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP Flow\SAP_Get_GateEntryPass.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="SAP Flow\SAP_Get_GateEntryPass.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Tcode">[in_Config("GE_Tcode").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_POnumber">[PONumber]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Quantity">[PO_Quantity]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_VehicleNumber">[in_TransactionItem.SpecificContent("Vehicle Number").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_VehicleType">[in_TransactionItem.SpecificContent("Vehicle type").ToString]</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="Out_EntryNumber">[EntryNumber]</OutArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:InvokeWorkflowFile>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP Flow\SAP_GRPO(Goods Movement).xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="SAP Flow\SAP_GRPO(Goods Movement).xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Tcode">[in_Config("GRPO_Tcode").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_PoNumber">[PONumber]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_GateEntryNumber">[EntryNumber]</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="Out_MaterialDocument">[MaterialDoc_Number]</OutArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:InvokeWorkflowFile>
+                <isactr:ConnectorActivity Configuration="H4sIAAAAAAAACr1Y3W4buRV+FWJ6oQQYK7YTd1MHRmDLNqKtN3YtexdtEQjUDCVxPRrOkhzJqmFgr/oAvesL9MHyJP0OydHfSLLTJEUCWHNIHp7znX8+ROdSZKlpqdxymQsdHT5EHcF1MuS9TPjF6PDvn+KonRelnREeoo98JKLDCBvzXGRRHJ1KU2R8GuitOV2YRMvCSpWDfjMtBLNDwXLsY0qz9ilTfUcpyl4mE6IVWo65FSwwZ1axyVAmQ7dtJIzhA/wtjWU9wYzIbZO1+7Pd0rBcWdZXZZ4ymbtDqVbFTqomecymqmQJz1lfajCAbCrLlvcwKwOpp6xVI7p/ICzjgcrHXGaET3WlYRxXYQlHK/0qaaCOFlZLMV6mO/37Gtw7GU/uGC8KaM8JJvb5n/9i13IwtCwB7Y6BZIfczs7SeqtaabRUMW2sobkr/MIVN8bfrgop0mUhJtIOVWlZ4w8NmIsMBDsZiJwP8N1R2l7qlFxjL44ulLorC/KSy96vIrGVF5Qa9kq7FR7vCQZz5C1aUeNg1uo7qtj9zLOSuMgUpCtuh/j9qsay73zvSKYxST07TBKQR0aBCiafHp3XyQEc7gHbeHoyPRV9XmY2OrS6FLhFGRk88krLEdfTCIecex8ntBC8/lqYAh+iOnctfiulFmn17U5cKG83MDtR6RRCXOYtno+58dse41m4BOe9UR2Rp7Wg+cmv1oMGlusrPeIWiDAr7m0VM1UwwENnoXAzRATgP8+M8psQ2qzRy1Ry18Aep5/jst3c+4sorgfsa+GAwGkX9FUgCB3m6UtA/DIUUEiTunR0CQLuPfy4KChsmWyKJisNtGIn+LTqDtGJYET4ayOy/uKGW+N4Ysf77ZC8JoGcI1U+i6uijWExSxRdx9zUPH7s/s6dfuOBVS/3B5cdPUAIXlZoQuuBNj86Hl8VAttt/JdS6K1G9oG7ydnZfHnJ1C5lubVXTllTpXIfCId+be/QLb5zH/vho9mkIBCm4s24Rnb3lyN+eiJTk3lgLAYE3bG/k6isHOXhoiaDWj6WChJpzLUkCxlmSlQkeF37NHaJNGbI8TlcTcvBAA6FnIqSyYRNmtu96s3TgfalgdUrUbjyOugnns54sPAq6n49LKMOq0JoKz34iRqN+I4RBXeZeWaIsLl9+qJylZdxRSRcFsnGTjPxovCKvUp5DqBATlSOcgxuzhDSZmKVBuPMSEzdrWxiqcinntZkP/F7dsA8ApWibC52b8oa7xquBUDKhIpjmYq0yc7uK1X2YiQR0EUcBH0XFvbja0HhHXvB45a/Pe6UWryP/ypM/FF9/v0/7BiNQh3CF+I+EQXqrAOh8dK5ZYIuRo1elZSBUtFHDwZRjufgmRjAmlmzU+bytxK5bqSQtoKR4aFr4POIzZGaIzRnZqiaqIHLqU/46MG391Ec9LVuyUPbRGW31xdrqyDoVelD3Ko8xd3MMWJIezwZjlwE+mo4BMBURhC4erViugwRTk6o3ePZhE8NnUOjtdD7hWNgCxeeFRtXTLcj9sdvjxj0MHXEzn1nQIVMOazgam7nyxqE1JVD+iHyX9DEJ0erBcVG0zeKjVzlaBz7rnUdIT7AeQhFdSbzO9/rulTY6JdZ1iC0oaUCG0OdbMOQI1OlqXoWD80WqH6Io7O8HLm5oiqNJAMwmhPosujx0wZUO5U3/C+4kl5dF201cC+w5ANxWzNCDBwu5H4UhNWo4OJ6oFVZALcS/gSREizCab1faTSYVIAwHbhbnDkCFzhvqHmuNgWLLbQoPaUywfNlMN9+D4TKvF/qrOscoIbRrVt0IGxFKZRgP+xpMZZiUoWX96yv0vtP30Vv2C+0XCuFFD1ltbCk72UO45qyKCAZFKHhijVo9w11dKg7CuOMy+/I2y75y3+IKuEgdpzH+LlsKJGsqc+lAKzi1Scu6nDD8AZPQ9IKIecSOmvcSuooG+RkGIWHdB4DAQUt+rjtM97uc2BcHYu+OPWDVxep5Ve5Flha/rbAfv793+hhsMWfQ+13ty+M8sHjJkrfmYInKBDIq0zc81FB5bNxiEFU2y4d75bFhOvUdJE287ThHh8ms1ZiztzN7OE1YvNFMZN2ZkafSJ+y0d73cHVnE8RxvSITbGFhySJUjOFt0NfXUfyG91aDmEObagj8j0K7Gm1XFVsr54JcdojilHbt5gnCSnC3MNTalgEPTC9mO16uDs40Mq8R6lkOvjTXW55yy5tuBOgWfJph5mq6F41Vof3OMCyEnZDy+0nhur7nClJt/say0IPQUyKEPV99s75LJ3n9sopcKyJPMdSiyKbdngY8CTe2xvma1tni+hdfEerrSKSSb6qv1eIzmaNTunQTaP3R9kdpu+7pJUQBXhuqd7bueP/5b7mIozDkutcYsJhV67mcvhY127kVA0xgONoReiyRYWnMGSN3oah1fjlD6Xc/W+dvfjh+c7x7fnC+Rchuy7WszRM88mLoe3JjzNbxbZ7Z6w8n+1fHtz+e7ZlyN0lfJyfXnSJmPwttIOrRXnOX/uE4qivGvKNclFbzLGZX7nHzz2Lq6s9RTu2pfy1BqokO+3gyWOOs3iS1PIz3dQOruN21zPz/TX2zyvJY16b+HOq/W/6xdlOEblD6kd6v2jmkyxNxhfEcOQOwU1EL8OOsMwCOtnx5VxqIU8DIAl61YzheYlBkErHjhg9sDF41DXpVosXLT3Nb3f+DtQVy01BBI6qvluppC9OlSBfe75yg1Vs2RVebtrd2X7/52/HHt29vOnOrtdyLknvAq6YAle+gL5D98OZPJl48iujtOIv46W6VT1TziE182Q5b5Osw96qcaDVBs9m2YkSqgH4FBIHHIvgHy+DPl/abb5sHX4TqJSbIyiN8UNagvuzcLLyGbuV2gUm2pERzGAlKgnj1ucJnB00fdbG76GM/cHOCe+6Aoh98oaZz5Mf/ArrrkGT4GgAA" ConnectionId="680939df-e40a-41ab-a2e8-04f47a4a0f5f" DisplayName="Send Message to Channel - Success" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="ConnectorActivity_9" UiPathActivityTypeId="37a305b2-89b1-315d-b73f-1778839a6c47">
+                  <isactr:ConnectorActivity.FieldObjects>
+                    <isactr:FieldObject Name="channel" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String">C034ZAN88TS</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="messageToSend" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String" xml:space="preserve">["QA - SAP PO executed successfully  -&gt;"+"PO Number : "+PONumber+";Entry Number:"+EntryNumber+";MaterialDocNumber:"+MaterialDoc_Number+";Plant:"+Plant+";Material:"+Material+";Stock Location:"+ST_Location+";Po_Quantity:"+PO_Quantity]</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="send_as" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String">bot</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="fields" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="buttons" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="image" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="parse" Type="FieldArgument" />
+                    <isactr:FieldObject Name="link_names" Type="FieldArgument" />
+                    <isactr:FieldObject Name="unfurl_links" Type="FieldArgument" />
+                    <isactr:FieldObject Name="username" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="icon_emoji" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="Jit_send_message_to_channel_v2" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <OutArgument x:TypeArguments="uiascb:send_message_to_channel_v2_Create" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="out_ts" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <OutArgument x:TypeArguments="x:String" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                  </isactr:ConnectorActivity.FieldObjects>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </isactr:ConnectorActivity>
+              </Sequence>
+            </If.Else>
+          </If>
+        </Sequence>
+      </ui:IfElseIfV2.Then>
+    </ui:IfElseIfV2>
+  </Sequence>
+</Activity>

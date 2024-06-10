@@ -1,0 +1,509 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SAP_GRPO_Goods_Movement_" this:SAP_GRPO_Goods_Movement_.in_Tcode="migo" this:SAP_GRPO_Goods_Movement_.in_PoNumber="2100001346" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ucas="clr-namespace:UiPath.Core.Activities.SAP;assembly=UiPath.UiAutomation.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Tcode" Type="InArgument(x:String)" />
+    <x:Property Name="in_PoNumber" Type="InArgument(x:String)" />
+    <x:Property Name="in_GateEntryNumber" Type="InArgument(x:String)" />
+    <x:Property Name="Out_MaterialDocument" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1026,6603</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SAP_GRPO_Goods_Movement__1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.Core.Activities.SAP</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Python.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SAP_GRPO_Goods_Movement_" sap:VirtualizedContainerService.HintSize="846,6538" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="Batch" />
+      <Variable x:TypeArguments="x:String" Name="DocCheckMsg" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ucas:CallTransaction DisplayName="Call Transaction 'Tcode'" sap:VirtualizedContainerService.HintSize="784,192" sap2010:WorkflowViewState.IdRef="CallTransaction_1" Transaction="[in_Tcode]">
+      <ucas:CallTransaction.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="40f43f6e-8d51-4056-bc87-c99bab6d1245" InformativeScreenshot="af5d16873d6feda74d3a8df33d3fd905" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP*' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ucas:CallTransaction.Target>
+    </ucas:CallTransaction>
+    <Sequence DisplayName="Sequence - GRPO" sap:VirtualizedContainerService.HintSize="784,6258" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application - SAP" sap:VirtualizedContainerService.HintSize="722,6147" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="92360f2f-baf6-4c80-b81b-b8cd3727d92c" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="688,5793" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NSelectItem DisplayName="Select Item 'Goods Receipt'" sap:VirtualizedContainerService.HintSize="626,189" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="Goods Receipt" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" Version="V3">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="12">
+                    <x:String>Place in Storage</x:String>
+                    <x:String>Transfer Posting</x:String>
+                    <x:String>Goods Receipt</x:String>
+                    <x:String>Display</x:String>
+                    <x:String>Goods Issue</x:String>
+                    <x:String>Change</x:String>
+                    <x:String>Return Delivery</x:String>
+                    <x:String>Remove from Storage</x:String>
+                    <x:String>Cancellation</x:String>
+                    <x:String>Release GR Blocked Stock</x:String>
+                    <x:String>Subsequent Adjustment</x:String>
+                    <x:String>Subsequent Delivery</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="242, 159, 132, 20" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;sap tooltip='Trans./Event' type='GuiComboBox' /&gt;" FuzzySelectorArgument="&lt;sap tooltip='Trans./Event' type='GuiComboBox' /&gt;" Guid="deda6676-b315-4f2a-8cc6-7af65f01aed0" ImageBase64="" InformativeScreenshot="cdb093b614762262cee9a3002c56f811.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="626,122" sap2010:WorkflowViewState.IdRef="Delay_2" />
+              <uix:NSelectItem DisplayName="Select Item - Outbound Delivery" sap:VirtualizedContainerService.HintSize="626,189" sap2010:WorkflowViewState.IdRef="NSelectItem_3" Item="Purchase Order" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" Version="V3">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="9">
+                    <x:String>Inbound Delivery</x:String>
+                    <x:String>Material Document</x:String>
+                    <x:String>Order</x:String>
+                    <x:String>Other</x:String>
+                    <x:String>Outbound Delivery</x:String>
+                    <x:String>Purchase Order</x:String>
+                    <x:String>Reservation</x:String>
+                    <x:String>Transport</x:String>
+                    <x:String>Transport ID Code</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="382, 159, 132, 20" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_FIRSTLINE:SAPLMIGO:0011/cmbGODYNPRO-REFDOC' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_FIRSTLINE:SAPLMIGO:0011/cmbGODYNPRO-REFDOC' /&gt;" Guid="ccb053ba-e326-4451-8bc0-67195dbe1cc4" InformativeScreenshot="4766cebe04e6e4f4c28581ccd254ebb5.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Outbound Delivery - Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="626,122" sap2010:WorkflowViewState.IdRef="Delay_3" />
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - Enter PO" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="626,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" Text="[in_PoNumber+&quot;[k(Enter)]&quot;]" Version="V3">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable CVScreenId="b99c8a9c-dfff-498c-93e6-75a8893e5af5" CvElementArea="521, 158, 77, 22" CvType="InputBox" DesignTimeRectangle="522, 159, 76, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_FIRSTLINE:SAPLMIGO:0011/subSUB_FIRSTLINE_REFDOC:SAPLMIGO:2000/ctxtGODYNPRO-PO_NUMBER' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_FIRSTLINE:SAPLMIGO:0011/subSUB_FIRSTLINE_REFDOC:SAPLMIGO:2000/ctxtGODYNPRO-PO_NUMBER' /&gt;" Guid="88c3adcb-c0f6-4849-8b8c-7a53abfe521f" InformativeScreenshot="1f34797e41b014a2b5ca4c459e486e35.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Purchase Order - Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="626,122" sap2010:WorkflowViewState.IdRef="Delay_1" />
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - General" sap:VirtualizedContainerService.HintSize="626,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="98491df4-aacd-435a-a549-d44d8d0aed1c" CvElementArea="273, 204, 78, 22" CvTextArea="294, 208, 43, 13" CvTextArgument="General" CvType="Button" DesignTimeRectangle="265, 205, 85, 22" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_HEADER:SAPLMIGO:0101/subSUB_HEADER:SAPLMIGO:0100/tabsTS_GOHEAD/tabpOK_GOHEAD_GENERAL' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_HEADER:SAPLMIGO:0101/subSUB_HEADER:SAPLMIGO:0100/tabsTS_GOHEAD/tabpOK_GOHEAD_GENERAL' check:text='General' /&gt;" Guid="adfbc6a8-a62e-46aa-860f-f12179406a8b" InformativeScreenshot="0cf09746e55d0b6117cefe85c94ce36e.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Purchase Order 1100000788 - Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - Del. Notes" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="626,250" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" Text="Movement" Version="V3">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable CVScreenId="c6221d98-0458-4a9d-b56f-1bc65856ec8e" CvElementArea="619, 246, 120, 22" CvType="InputBox" DesignTimeRectangle="620, 247, 118, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_HEADER:SAPLMIGO:0101/subSUB_HEADER:SAPLMIGO:0100/tabsTS_GOHEAD/tabpOK_GOHEAD_GENERAL/ssubSUB_TS_GOHEAD_GENERAL:SAPLMIGO:0110/txtGOHEAD-LFSNR' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_HEADER:SAPLMIGO:0101/subSUB_HEADER:SAPLMIGO:0100/tabsTS_GOHEAD/tabpOK_GOHEAD_GENERAL/ssubSUB_TS_GOHEAD_GENERAL:SAPLMIGO:0110/txtGOHEAD-LFSNR' /&gt;" Guid="f711d228-0e9b-44d4-8a9b-84b5693f2097" InformativeScreenshot="7ecd9dc3b2a8bc83df165aea01a9ea00.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Purchase Order 1100000788 - Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="c6221d98-0458-4a9d-b56f-1bc65856ec8e" CvTextArea="509, 250, 74, 15" CvTextArgument="Delivery Note" CvType="Text" DesignTimeRectangle="508, 247, 111, 20" ElementType="Text" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_HEADER:SAPLMIGO:0101/subSUB_HEADER:SAPLMIGO:0100/tabsTS_GOHEAD/tabpOK_GOHEAD_GENERAL/ssubSUB_TS_GOHEAD_GENERAL:SAPLMIGO:0110/lblGOHEAD-LFSNR' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_HEADER:SAPLMIGO:0101/subSUB_HEADER:SAPLMIGO:0100/tabsTS_GOHEAD/tabpOK_GOHEAD_GENERAL/ssubSUB_TS_GOHEAD_GENERAL:SAPLMIGO:0110/lblGOHEAD-LFSNR' check:text='Delivery Note' /&gt;" Guid="4b70492f-36a6-499e-ad74-77dc26c55881" SearchSteps="Selector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Batch'" sap:VirtualizedContainerService.HintSize="626,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="9ba178fc-9cdb-45c4-9156-0949e5727e16" CvElementArea="690, 511, 75, 23" CvTextArea="711, 517, 32, 12" CvTextArgument="Batch" CvType="Button" DesignTimeRectangle="704, 513, 59, 22" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH' check:text='Batch' /&gt;" Guid="390d1af5-ad2f-4cc9-b69e-e84d9d7a8352" InformativeScreenshot="aec2816573d7a8ea84a8772fe30284a3.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Purchase Order 1100000788 - Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Classification" sap:VirtualizedContainerService.HintSize="626,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="851f8b8a-bb5f-491b-8ce5-ac2ca3c9f935" CvElementArea="647, 619, 114, 24" CvTextArea="669, 624, 67, 13" CvTextArgument="Classification" CvType="Button" DesignTimeRectangle="648, 620, 111, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH/ssubSUB_TS_GOITEM_BATCH:SAPLMIGO:0335/btnOK_BATCH_CLASS' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH/ssubSUB_TS_GOITEM_BATCH:SAPLMIGO:0335/btnOK_BATCH_CLASS' check:text='Classification' /&gt;" Guid="b161bd01-34bf-4ef1-b0d1-17c4487d4f58" InformativeScreenshot="f19b522456f308432ba72322bee4c3fa.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Purchase Order 1100000787 - Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Batch Selection" sap:VirtualizedContainerService.HintSize="626,225" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="33639ec1-8a39-413f-b62b-c8b25e94917a" CvElementArea="264, 51, 22, 21" CvTextArea="269, 57, 13, 11" CvType="Icon" DesignTimeRectangle="264, 50, 22, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='tbar[0]/btn[3]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[3]' /&gt;" Guid="77187a16-8019-4bdf-9bcf-8191a689102e" InformativeScreenshot="c67bb8fefd7072efa7ac0070b7303327.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title=' Classification' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NGetText DisplayName="Get Text 'Batch'" sap:VirtualizedContainerService.HintSize="626,189" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" TextString="[Batch]" Version="V3">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable CVScreenId="84fa0e77-c021-4ad5-b8f9-c9f3836c4fcd" CvElementArea="416, 620, 78, 21" CvType="InputBox" DesignTimeRectangle="417, 621, 76, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH/ssubSUB_TS_GOITEM_BATCH:SAPLMIGO:0335/ctxtGOITEM-CHARG' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH/ssubSUB_TS_GOITEM_BATCH:SAPLMIGO:0335/ctxtGOITEM-CHARG' /&gt;" Guid="0208af79-381f-4a89-a199-3f2eff2f4950" ImageBase64="" InformativeScreenshot="8d4810bfcf99547f2849a938a23ca935.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Purchase Order 1100000787 - Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="84fa0e77-c021-4ad5-b8f9-c9f3836c4fcd" CvTextArea="271, 624, 32, 13" CvTextArgument="Batch" CvType="Text" DesignTimeRectangle="270, 621, 146, 20" ElementType="Text" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH/ssubSUB_TS_GOITEM_BATCH:SAPLMIGO:0335/lblGOITEM-CHARG' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH/ssubSUB_TS_GOITEM_BATCH:SAPLMIGO:0335/lblGOITEM-CHARG' check:text='Batch' /&gt;" Guid="f131d21d-be13-40d8-b567-ce8ecb9303d6" SearchSteps="Selector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <If Condition="[String.IsNullOrEmpty(Batch)]" sap:VirtualizedContainerService.HintSize="626,3373" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Throw DisplayName="Throw - Batch Update Failure" Exception="[new Exception(&quot;BE:Batch is missing&quot;)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="592,3012" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Supplier Batch'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="530,250" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" Text="[Batch]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable CVScreenId="395f3496-706f-48bf-85a5-d020c3f38a66" CvElementArea="416, 664, 113, 22" CvType="InputBox" DesignTimeRectangle="417, 665, 111, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH/ssubSUB_TS_GOITEM_BATCH:SAPLMIGO:0335/ctxtGOITEM-LICHA' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH/ssubSUB_TS_GOITEM_BATCH:SAPLMIGO:0335/ctxtGOITEM-LICHA' /&gt;" Guid="19a1102d-f61d-4a6a-8303-9021675f742a" InformativeScreenshot="a36fdece1bfb8f172c0268cd6831706a.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Purchase Order 1100000787 - Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="395f3496-706f-48bf-85a5-d020c3f38a66" CvTextArea="271, 668, 79, 15" CvTextArgument="Supplier Batch" CvType="Text" DesignTimeRectangle="270, 665, 146, 20" ElementType="Text" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH/ssubSUB_TS_GOITEM_BATCH:SAPLMIGO:0335/lblGOITEM-LICHA' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH/ssubSUB_TS_GOITEM_BATCH:SAPLMIGO:0335/lblGOITEM-LICHA' check:text='Supplier Batch' /&gt;" Guid="c67e20fb-5001-4acf-8c50-5c6da1450804" SearchSteps="Selector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - MDate" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="530,250" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" Text="[Date.Today.ToString(&quot;dd.MM.yyyy&quot;)]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable CVScreenId="847c2026-30b2-4ed8-bd67-f90208ce1acb" CvElementArea="416, 708, 77, 21" CvType="InputBox" DesignTimeRectangle="417, 709, 76, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH/ssubSUB_TS_GOITEM_BATCH:SAPLMIGO:0335/ctxtGOITEM-HSDAT' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH/ssubSUB_TS_GOITEM_BATCH:SAPLMIGO:0335/ctxtGOITEM-HSDAT' /&gt;" Guid="2ab46ff2-c6ac-419d-b389-99b422fdd3d9" InformativeScreenshot="136309800095f5cd0c543a181020264d.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Purchase Order 1100000787 - Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="847c2026-30b2-4ed8-bd67-f90208ce1acb" CvTextArea="271, 712, 114, 13" CvTextArgument="Date of Manufacture" CvType="Text" DesignTimeRectangle="270, 709, 146, 20" ElementType="Text" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH/ssubSUB_TS_GOITEM_BATCH:SAPLMIGO:0335/lblGOITEM-HSDAT' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH/ssubSUB_TS_GOITEM_BATCH:SAPLMIGO:0335/lblGOITEM-HSDAT' check:text='Date of Manufacture' /&gt;" Guid="ca50659f-797e-4b78-9572-ab62fef39363" SearchSteps="Selector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - EDate" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="530,250" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" Text="[Date.Today.AddDays(90).ToString(&quot;dd.MM.yyyy&quot;)]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable CVScreenId="d92388c1-bae5-4bea-8d2d-cf6b56296956" CvElementArea="416, 730, 78, 22" CvType="InputBox" DesignTimeRectangle="417, 731, 76, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH/ssubSUB_TS_GOITEM_BATCH:SAPLMIGO:0335/ctxtGOITEM-VFDAT' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH/ssubSUB_TS_GOITEM_BATCH:SAPLMIGO:0335/ctxtGOITEM-VFDAT' /&gt;" Guid="884b638d-53a6-413e-8360-260f4eb70aa9" InformativeScreenshot="6edb35410a72e6df689d610eff89dde6.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Purchase Order 1100000787 - Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="d92388c1-bae5-4bea-8d2d-cf6b56296956" CvTextArea="271, 734, 56, 15" CvTextArgument="SLED/BBD" CvType="Text" DesignTimeRectangle="270, 731, 146, 20" ElementType="Text" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH/ssubSUB_TS_GOITEM_BATCH:SAPLMIGO:0335/lblGOITEM-VFDAT' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/tabsTS_GOITEM/tabpOK_GOITEM_BATCH/ssubSUB_TS_GOITEM_BATCH:SAPLMIGO:0335/lblGOITEM-VFDAT' check:text='SLED/BBD' /&gt;" Guid="e5d7d049-505d-4d36-8c50-abb440d014d5" SearchSteps="Selector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NCheck Action="Check" DisplayName="Check -  'Item OK'" sap:VirtualizedContainerService.HintSize="530,189" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" Version="V3">
+                      <uix:NCheck.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="312, 819, 132, 20" DesignTimeScaleFactor="1" ElementType="CheckBox" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/subSUB_DETAIL_TAKE:SAPLMIGO:0304/chkGODYNPRO-DETAIL_TAKE' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_ITEMDETAIL:SAPLMIGO:0301/subSUB_DETAIL:SAPLMIGO:0300/subSUB_DETAIL_TAKE:SAPLMIGO:0304/chkGODYNPRO-DETAIL_TAKE' check:text='Item OK' /&gt;" Guid="4140650b-974e-4bfe-88de-d6fd30085837" InformativeScreenshot="a0088b43057b032de79ff8e9c7d3f336.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Purchase Order 1100000787 - Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                      </uix:NCheck.Target>
+                    </uix:NCheck>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - 'Gate Entry Info'" sap:VirtualizedContainerService.HintSize="530,225" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="471, 205, 113, 22" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_HEADER:SAPLMIGO:0101/subSUB_HEADER:SAPLMIGO:0100/tabsTS_GOHEAD/tabpOK_GOHEAD_EXT_1' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_HEADER:SAPLMIGO:0101/subSUB_HEADER:SAPLMIGO:0100/tabsTS_GOHEAD/tabpOK_GOHEAD_EXT_1' check:text='Gate Entry Info' /&gt;" Guid="1a3ba009-223e-46a2-af74-fd09bfa7132d" InformativeScreenshot="cb081a989f2c278fd14e7f9cbdfdeec8.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Purchase Order 1100000787 - Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - Gate Entry Number" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="530,286" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" Text="[in_GateEntryNumber]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="438, 269, 76, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_HEADER:SAPLMIGO:0101/subSUB_HEADER:SAPLMIGO:0100/tabsTS_GOHEAD/tabpOK_GOHEAD_EXT_1/ssubSUB_TS_GOHEAD_EXT_1:SAPLZEMM_MIGO_ENH:0003/ctxtZMIGO_SCREEN-GATEENTRY' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_HEADER:SAPLMIGO:0101/subSUB_HEADER:SAPLMIGO:0100/tabsTS_GOHEAD/tabpOK_GOHEAD_EXT_1/ssubSUB_TS_GOHEAD_EXT_1:SAPLZEMM_MIGO_ENH:0003/ctxtZMIGO_SCREEN-GATEENTRY' /&gt;" Guid="e5487d5e-4c88-4eee-84a7-0902c8221c6b" ImageBase64="" InformativeScreenshot="7aefefbafd663eeba9e1b43bd00a8165.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Purchase Order 1100000787 - Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="291, 269, 146, 20" ElementType="Text" FullSelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_HEADER:SAPLMIGO:0101/subSUB_HEADER:SAPLMIGO:0100/tabsTS_GOHEAD/tabpOK_GOHEAD_EXT_1/ssubSUB_TS_GOHEAD_EXT_1:SAPLZEMM_MIGO_ENH:0003/lblZMIGO_SCREEN-GATEENTRY' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUB_MAIN_CARRIER:SAPLMIGO:0003/subSUB_HEADER:SAPLMIGO:0101/subSUB_HEADER:SAPLMIGO:0100/tabsTS_GOHEAD/tabpOK_GOHEAD_EXT_1/ssubSUB_TS_GOHEAD_EXT_1:SAPLZEMM_MIGO_ENH:0003/lblZMIGO_SCREEN-GATEENTRY' check:text='Gate Entry Number' /&gt;" Guid="90318bea-ff77-4394-896a-24908fb0ec2e" SearchSteps="Selector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                      <uix:NTypeInto.VerifyOptions>
+                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        </uix:VerifyExecutionTypeIntoOptions>
+                      </uix:NTypeInto.VerifyOptions>
+                    </uix:NTypeInto>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Check" sap:VirtualizedContainerService.HintSize="530,225" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="215, 123, 47, 20" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='tbar[1]/btn[7]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[1]/btn[7]' check:text='Check' /&gt;" Guid="e90bb4f6-464c-4507-937b-7d5f0b2f0e55" InformativeScreenshot="5c01782443254877efae609471e5631d.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Purchase Order 1100000787 - Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NGetText DisplayName="Get Text 'StatusBar.'" sap:VirtualizedContainerService.HintSize="530,189" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" TextString="[DocCheckMsg]" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="22, 1019, 1700, 29" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;sap id='sbar/pane[0]' /&gt;" FuzzySelectorArgument="&lt;sap id='sbar/pane[0]' /&gt;" Guid="7e8957e4-b650-422f-8340-adac86e1e3b3" InformativeScreenshot="40d48f7d02e2932b9b92db47bae88c33.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Purchase Order 1100000786 - Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                    </uix:NGetText>
+                    <If Condition="[DocCheckMsg.ToLower.Contains(&quot;document is o.k.&quot;)]" DisplayName="If - Doc is OK" sap:VirtualizedContainerService.HintSize="530,1063" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,704" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Save" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="230, 50, 22, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='tbar[0]/btn[11]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[11]' /&gt;" Guid="432ee1ba-a210-4419-9570-8fd93144374f" InformativeScreenshot="d53550651a2d433891099f6444ad8d4f.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Purchase Order 1100000786 - Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                          <uix:NGetText DisplayName="Get Text - Status Bar" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" TextString="[DocCheckMsg]" Version="V3">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="22, 1019, 1700, 29" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;sap id='sbar/pane[0]' /&gt;" FuzzySelectorArgument="&lt;sap id='sbar/pane[0]' /&gt;" Guid="7e8957e4-b650-422f-8340-adac86e1e3b3" InformativeScreenshot="40d48f7d02e2932b9b92db47bae88c33.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Purchase Order 1100000786 - Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                            </uix:NGetText.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NGetText>
+                          <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[Out_MaterialDocument]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(DocCheckMsg, "\d+").ToString()]</InArgument>
+                            </Assign.Value>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Assign>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[Out_MaterialDocument]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - 'Button Exit'" sap:VirtualizedContainerService.HintSize="434,216" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="92360f2f-baf6-4c80-b81b-b8cd3727d92c" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="286, 50, 22, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='tbar[0]/btn[15]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[15]' /&gt;" Guid="72a77d58-9880-4fd5-9ef0-564206656e4a" InformativeScreenshot="a0412ee2f31f32b21b3bca2fb1e83307.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Purchase Order - Anshul Ahuja' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                          </uix:NClick>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Throw Exception="[new Exception(&quot;Document is O.K. message not found&quot;)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-8, -8, 1744, 1056" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE8SURBVFhHYxgFo2AUjIJBAxxrVls61ay5T2dcC7Ue7AAnoMB/emHHmjWz7KtXMkGtp68DgJbPsCtfzQi1GgLo5QCg5dMcy1cgLH//5UcECG89fa+5dsnR/5Ti0nkH/ztWrcJuefWaKXYVq1B9/v7Lz//Uwk/ffP6f3LX2v335cmyWT7KqQPI5DGAziBwMsjy+ddl/m6IFQMtWo1s+wbZ4CablIIDNMFLxk9ef/se1LMVuec2aPrMStGBHBtgMJAWDLI8FWV6M1fIeqDW4AdCQxSB89f7LfWsPXfm/9uBlknBsCzDYsVlevboLagVxwKZovotd6ZL/diWLScL25cuwWL6mA2os8QBoCFXKAWCwt0GNJA1QqSBqhhpHOqDUAUCfN0KNIg8AHaAJNGg+mTgXaswoGAWjYBSQCBgYAMLf0dVJBbU9AAAAAElFTkSuQmCC" InformativeScreenshot="bca7610bc7b807e05944ec6631ebda28.png" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Goods Receipt Purchase Order - Anshul Ahuja' /&gt;" Title="Goods Receipt Purchase Order - Anshul Ahuja" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>
